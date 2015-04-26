@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> example-app </title>
+</head>
+
+<body>
+    <h1> Hello, world! </h1>
+
+    <h2> Simplest possible app </h2>
+    <p> This example app is from
+        <a href="http://kan.so/docs/Simplest_possible_app">
+            http://kan.so/docs/Simplest_possible_app
+        </a>
+    </p>
+
+
+    <ol>
+        <li>
+            <p> Get the dependencies before pushing: </p>
+            <code> kanso install </code>
+        </li>
+
+
+        <li>
+            <p> Push the app to a couchdb database: </p>
+            <code> kanso push http://localhost:5984/example </code>
+        </li>
+
+
+        <li>
+            <p> Upload the initial data documents: </p>
+            <code> kanso transform add-ids data/example.json data/example-with-ids.json </code>
+            <br/>
+            <code> kanso upload data/example-with-ids.json http://localhost:5984/example </code>
+        </li>
+
+
+        <li>
+            <p> The app will be deployed to:
+                <br/>
+                <a href="http://localhost:5984/example/_design/example-app/index.html">
+                    http://localhost:5984/example/_design/example-app/index.html
+                </a>
+            </p>
+        </li>
+    </ol>
+
+
+    <h2> Bigger example </h2>
+    <p>
+        For a larger example, take a look at the TapirWiki port from CouchApp to Kanso:
+        <a href="https://github.com/johnko/tapirwiki">
+            https://github.com/johnko/tapirwiki
+        </a>
+    </p>
+    <p>
+        If you follow the TapriWiki deployment instructions, it would be deployed to:
+        <br/>
+        <a href="http://localhost:5984/tapir/_design/tapir/index.html">
+            http://localhost:5984/tapir/_design/tapir/index.html
+        </a>
+    </p>
+
+
+    <script type="text/javascript" src="modules.js"></script>
+    <script type="text/javascript">
+        var greet = require('lib/greet');
+        greet.sayHello('world');
+    </script>
+</body>
+
+</html>
